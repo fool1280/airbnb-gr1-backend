@@ -1,6 +1,7 @@
 var express = require("express");
 var logger = require("morgan");
-const mongoose = require("mongoose");
+var cors = require("cors");
+var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/indexRoute");
 var usersRouter = require("./routes/userRoute");
@@ -13,6 +14,7 @@ require("dotenv").config();
 var app = express();
 
 app.use(logger("dev"));
+app.use(cors());
 app.use(express.json()); //send data as json object
 
 mongoose
