@@ -15,7 +15,9 @@ const experienceSchema = new mongoose.Schema(
             required: true,
         },
         host: {
-            type: String,
+            type: mongoose.Schema.ObjectId,
+            ref: "User",
+            required: true,
         },
         country: {
             type: String,
