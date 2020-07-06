@@ -1,6 +1,7 @@
 var express = require("express");
 var logger = require("morgan");
 var cors = require("cors");
+var port = process.env.PORT || 3000;
 var mongoose = require("mongoose");
 
 var indexRouter = require("./routes/indexRoute");
@@ -27,10 +28,14 @@ mongoose
     .then(() => console.log("connected to database"));
 
 app.use("/", indexRouter);
+
 app.use("/users", usersRouter);
 app.use("/auth", authRouter);
 app.use("/experiences", expRouter);
 
 app.use(errorController);
 
+app.listen(port, function () {
+    console.log(`Example app listening on port !`);
+});
 module.exports = app;
