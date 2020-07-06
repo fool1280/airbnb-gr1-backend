@@ -17,6 +17,7 @@ exports.loginRequired = catchAsync(async (req, res, next) => {
         next(new AppError(401, "Unauthorized"));
     }
     req.user = user;
+    console.log(req);
     next();
 });
 

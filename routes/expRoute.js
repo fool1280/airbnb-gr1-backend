@@ -14,18 +14,18 @@ const {
     createExperience,
 } = require("../controllers/expController");
 
-router.use("/host", loginRequired, hostRequired, hostModifyRouter);
-router.use("/:id/reviews", loginRequired, reviewRouter);
+router.use("/host", /*loginRequired, hostRequired, */ hostModifyRouter);
+router.use("/:id/reviews", /*loginRequired, */ reviewRouter);
 
 router
     .route("/")
     .get(getExperiences)
-    .post(loginRequired, hostRequired, createExperience);
+    .post(/*loginRequired, hostRequired, */ createExperience);
 
 router
     .route("/:id/reviews")
-    .post(loginRequired, createReview)
-    .get(loginRequired, getAllReview)
-    .delete(loginRequired, deleteReview);
+    .post(/*loginRequired, */ createReview)
+    .get(/*loginRequired, */ getAllReview)
+    .delete(/*loginRequired, */ deleteReview);
 
 module.exports = router;
