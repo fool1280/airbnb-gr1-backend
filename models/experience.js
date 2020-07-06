@@ -52,6 +52,10 @@ const experienceSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
+        pictureUrl: {
+            type: String,
+            required: true,
+        },
         avgRating: {
             type: Number,
             default: 0,
