@@ -44,7 +44,7 @@ exports.createExperience = catchAsync(async (req, res, next) => {
         languages,
         price,
         duration,
-        categories,
+        category,
         tags,
         groupSize,
         pictureUrl,
@@ -56,7 +56,7 @@ exports.createExperience = catchAsync(async (req, res, next) => {
         !languages ||
         !price ||
         !duration ||
-        !categories ||
+        !category ||
         !tags ||
         !groupSize ||
         !pictureUrl
@@ -64,7 +64,7 @@ exports.createExperience = catchAsync(async (req, res, next) => {
         return next(new AppError(400, "Missing fields of information"));
     }
     const newTags = await Tag.convertToObject(tags);
-    const newCategories = await Category.convertToObject(categories);
+    //const newCategories = await Category.convertToObject(categories);
     const exp = await Exp.create({
         title,
         description,
@@ -73,7 +73,7 @@ exports.createExperience = catchAsync(async (req, res, next) => {
         languages,
         price,
         duration,
-        categories: newCategories,
+        category,
         tags: newTags,
         groupSize,
         pictureUrl,

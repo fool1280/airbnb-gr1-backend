@@ -34,13 +34,18 @@ const experienceSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
+        /*
         categories: [
             {
                 type: mongoose.Schema.ObjectId,
                 ref: "Category",
                 require: true,
             },
-        ],
+        ],*/
+        category: {
+            type: String,
+            required: true,
+        },
         tags: [
             {
                 type: mongoose.Schema.ObjectId,
