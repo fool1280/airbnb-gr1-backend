@@ -52,10 +52,6 @@ const experienceSchema = new mongoose.Schema(
             type: Number,
             required: true,
         },
-        toBring: {
-            type: [String],
-            required: true,
-        },
         avgRating: {
             type: Number,
             default: 0,

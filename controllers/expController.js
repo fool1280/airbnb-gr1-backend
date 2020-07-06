@@ -47,7 +47,6 @@ exports.createExperience = catchAsync(async (req, res, next) => {
         categories,
         tags,
         groupSize,
-        toBring,
     } = req.body;
     if (
         !title ||
@@ -58,8 +57,7 @@ exports.createExperience = catchAsync(async (req, res, next) => {
         !duration ||
         !categories ||
         !tags ||
-        !groupSize ||
-        !toBring
+        !groupSize
     ) {
         return next(new AppError(400, "Missing fields of information"));
     }
@@ -76,7 +74,6 @@ exports.createExperience = catchAsync(async (req, res, next) => {
         categories: newCategories,
         tags: newTags,
         groupSize,
-        toBring,
     });
     res.status(201).json({
         status: "ok",
