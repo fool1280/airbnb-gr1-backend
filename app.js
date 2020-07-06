@@ -34,4 +34,6 @@ app.use("/experiences", expRouter);
 
 app.use(errorController);
 
+app.listen(process.env.PORT || 3000);
+
 module.exports = app;
